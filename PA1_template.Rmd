@@ -52,4 +52,4 @@ The following plot shows the number of steps as a function of interval (time of 
 
 data_filled$is.weekend <- as.factor(ifelse(weekdays(as.Date(data_filled$date)) %in% c("Samstag","Sonntag"),"weekend","weekday"))
 new_daily_steps <- aggregate(data_filled$steps, by=list("interval"=data_filled$interval, "weekday"=data_filled$is.weekend), mean)
-ggplot(new_daily_steps, aes(x=interval, y=x))+geom_line()+xlab("Interval")+ylab("Average number of steps")+facet_grid(weekday~.)
+ggplot(new_daily_steps, aes(x=interval, y=x))+geom_line()+xlab("Interval")+ylab("Average number of steps")+facet_grid(weekday~.)                     
